@@ -8,7 +8,7 @@ import streamlit as st
 @st.cache(allow_output_mutation=True)
 
 def load_model():
-    model = tf.keras.models.load_model('./moneyheist_checkpoint.h5')
+    model = tf.keras.models.load_model('hanh-thepepsimist/Money_Heist/moneyheist_checkpoint.h5')
     return model
 
 def scale(image):
@@ -35,7 +35,7 @@ if choice=='Home':
     st.write("Wanna start a heist but not familiar with Vietnamese cash?")
     st.write("You will find this tool useful")
 
-    st.image('./di duong quyen.gif',
+    st.image('hanh-thepepsimist/Money_Heist/di duong quyen.gif',
               use_column_width='auto')
 
 elif choice=='Upload Image':
@@ -63,5 +63,5 @@ elif choice=='Image from Internet':
 
 elif choice=='About Me':
     st.success('Super cute geek as you might wonder')
-    st.image('./4BON.gif')
+    st.image('hanh-thepepsimist/Money_Heist/4BON.gif')
     st.balloons()
