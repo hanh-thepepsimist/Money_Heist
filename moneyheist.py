@@ -5,6 +5,8 @@ from PIL import Image
 import requests
 import streamlit as st
 
+@st.cache(allow_output_mutation=True)
+
 model = tf.keras.models.load_model('moneyheist_checkpoint.h5')
 def scale(image):
     image = tf.cast(image, tf.float32)
