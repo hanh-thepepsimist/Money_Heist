@@ -5,7 +5,7 @@ from PIL import Image
 import requests
 import streamlit as st
 
-@st.cache(allow_output_mutation=True)
+st.cache(allow_output_mutation=True)
 
 def load_model():
     model = tf.keras.models.load_model('./moneyheist_checkpoint.h5')
