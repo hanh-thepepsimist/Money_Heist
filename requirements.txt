@@ -5,5 +5,5 @@ numpy
 pandas
 pillow
 requests
-streamlit
+streamlit==0.88.0
 tensorflow==2.4.1
