@@ -11,14 +11,8 @@ def load_model():
     model = tf.keras.models.load_model('moneyheist_checkpoint.h5')
     return model
 
-def scale(image):
-    image = tf.cast(image, tf.float32)
-    image /= 255.0
-    return tf.image.resize(image,[224,224])
-
 def decode_img(image):
     img = tf.image.decode_jpeg(image, channels=3)
-    img = scale(img)
     return np.expand_dims(img,axis=0)
 
 model = load_model()
@@ -29,7 +23,7 @@ menu = ['Home', 'Upload Image', 'Image from Internet', 'About Me']
 choice = st.sidebar.selectbox('Vietnamese cash classifier',menu)
 if choice=='Home':
     st.title("Money heist for beginner: A classifier")
-    st.header("Web-based cash classifier wwith accurcay of 96.45%")
+    st.header("Web-based cash classifier with accurcay of 96.45%")
 
     st.write("")
     st.write("Wanna start a heist but not familiar with Vietnamese cash?")
