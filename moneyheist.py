@@ -17,7 +17,7 @@ def decode_img(image):
 
 model = load_model()
 
-classes = ['One thousand vnd', 'Two thousand vnd','Five thousand vnd', 'Ten thousand vnd', 'Twwenty thousand vnd', 'Fifty thousand vnd', 'A hundred thousand vnd', 'twwo hundred thousand vnd', 'Five hundred thousand vnd']
+classes = ['1000', '10000', '100000', '2000', '20000', '200000', '5000', '50000', '500000']
 
 menu = ['Home', 'Upload Image', 'Image from Internet', 'About Me']
 choice = st.sidebar.selectbox('Vietnamese cash classifier',menu)
