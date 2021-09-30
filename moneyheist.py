@@ -23,7 +23,7 @@ menu = ['Home', 'Upload Image', 'Image from Internet', 'About Me']
 choice = st.sidebar.selectbox('Vietnamese cash classifier',menu)
 if choice=='Home':
     st.title("Money heist for beginner: A classifier")
-    st.header("Web-based cash classifier with accurcay of 96.45%")
+    st.header("Web-based cash classifier")
 
     st.write("")
     st.write("Wanna start a heist but not familiar with Vietnamese cash?")
@@ -44,16 +44,16 @@ elif choice=='Upload Image':
             st.write(classes[label[0]])
             st.write('')
 
-elif choice=='Image from Internet':
-    path = st.text_input('Enter Image Url to classify', 'https://upload.wikimedia.org/wikipedia/vi/9/9f/500000_polymer.jpg')
-    if path is not None:
-        content = requests.get(path).content
-        st.write('Predicted class:')
-    with st.spinner('Classifying...'):
-        img=decode_img(content)
-        st.image(img, channels='BGR')
-        label = np.argmax(model.predict(img),axis=1)
-        st.write(classes[label[0]])
+# elif choice=='Image from Internet':
+#     path = st.text_input('Enter Image Url to classify', 'https://upload.wikimedia.org/wikipedia/vi/9/9f/500000_polymer.jpg')
+#     if path is not None:
+#         content = requests.get(path).content
+#         st.write('Predicted class:')
+#     with st.spinner('Classifying...'):
+#         img=decode_img(content)
+#         st.image(img, channels='BGR')
+#         label = np.argmax(model.predict(img),axis=1)
+#         st.write(classes[label[0]])
 
 elif choice=='About Me':
     st.success('Super cute geek as you might wonder')
