@@ -10,7 +10,8 @@ These are the notes that are currently printed and they exist in denominations o
 ### A. Database
 This is a home-made database contributed by CoderSchoool students with images of different qualities and quantities.
 ### B. Methods
-This project includes two main sessions: 
+This project includes two main sessions:
+
 (1)Build predictor: Used transfer learning to build a model based on MobileNetV2. The model has not working well with 20000 and 50000 yet.
 
 (2)Deploy web application: Used Streamlit 
