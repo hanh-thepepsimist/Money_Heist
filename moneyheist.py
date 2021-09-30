@@ -19,7 +19,7 @@ model = load_model()
 
 classes = ['1000', '10000', '100000', '2000', '20000', '200000', '5000', '50000', '500000']
 
-menu = ['Home', 'Upload Image', 'Image from Internet', 'About Me']
+menu = ['Home', 'Upload Image', 'About Me']
 choice = st.sidebar.selectbox('Vietnamese cash classifier',menu)
 if choice=='Home':
     st.title("Money heist for beginner: A classifier")
