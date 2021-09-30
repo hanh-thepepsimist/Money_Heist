@@ -50,9 +50,9 @@ elif choice=='Image from Internet':
         content = requests.get(path).content
         st.write('Predicted class:')
     with st.spinner('Classifying...'):
-        image = Image.open(BytesIO(content))
+        #image = Image.open(BytesIO(content))
         img = tf.image.decode_image(content,expand_animations=False,channels=3)
-        st.image(image, channels='RBG')
+        st.image(img, channels='RBG')
         #label = np.argmax(model.predict(img),axis=1)
         #st.write(classes[label[0]])
 
