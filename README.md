@@ -16,5 +16,6 @@ This project includes two main sessions:
 
 (2)Deploy web application: Used Streamlit 
 ## 3. Results
-![image](https://user-images.githubusercontent.com/81749639/135402241-667c424d-de99-4e4d-a940-5db98b4cb07e.png)
-https://tinyurl.com/moneyclassifier
+![image](https://user-images.githubusercontent.com/81749639/135438641-f0275dc6-ca7a-4cd4-bd45-21c1e7c8c55a.png)
+
+ Experience that app here: https://tinyurl.com/moneyclassifier
