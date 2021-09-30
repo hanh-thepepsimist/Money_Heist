@@ -19,7 +19,7 @@ model = load_model()
 
 classes = ['1000', '10000', '100000', '2000', '20000', '200000', '5000', '50000', '500000']
 
-menu = ['Home', 'Upload Image', 'About Me']
+menu = ['Home', 'Upload Image','Image from Internet', 'About Me']
 choice = st.sidebar.selectbox('Vietnamese cash classifier',menu)
 if choice=='Home':
     st.title("Money heist for beginner: A classifier")
@@ -37,23 +37,24 @@ elif choice=='Upload Image':
     photo_uploaded = st.file_uploader('Upload your best photo here', ['png', 'jpeg', 'jpg'])
     if photo_uploaded!=None:
         img = decode_img(photo_uploaded.read())
-        st.image(img, channels='BGR')
+        st.image(img, channels='RBG')
         st.write('Predicted class:')
         with st.spinner('Classifying...'):
             label = np.argmax(model.predict(img),axis=1)
             st.write(classes[label[0]])
             st.write('')
 
-# elif choice=='Image from Internet':
-#     path = st.text_input('Enter Image Url to classify', 'https://upload.wikimedia.org/wikipedia/vi/9/9f/500000_polymer.jpg')
-#     if path is not None:
-#         content = requests.get(path).content
-#         st.write('Predicted class:')
-#     with st.spinner('Classifying...'):
-#         img=decode_img(content)
-#         st.image(img, channels='BGR')
-#         label = np.argmax(model.predict(img),axis=1)
-#         st.write(classes[label[0]])
+elif choice=='Image from Internet':
+    path = st.text_input('Enter Image Url:', 'https://upload.wikimedia.org/wikipedia/vi/9/9f/500000_polymer.jpg')
+    if path is not None:
+        content = requests.get(path).content
+        st.write('Predicted class:')
+    with st.spinner('Classifying...'):
+        image = Image.open(BytesIO(content))
+        img=decode_img(content)
+        st.image(image, channels='RBG')
+        label = np.argmax(model.predict(img),axis=1)
+        st.write(classes[label[0]])
 
 elif choice=='About Me':
     st.success('Super cute geek as you might wonder')
