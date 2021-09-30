@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import pandas as pd
 from PIL import Image
+from io import BytesIO
 import requests
 import streamlit as st
 
@@ -49,12 +50,12 @@ elif choice=='Image from Internet':
     if path is not None:
         content = requests.get(path).content
         st.write('Predicted class:')
-#     with st.spinner('Classifying...'):
-#         image = Image.open(BytesIO(content))
-#         img = decode_image(content)
-#         st.image(img, channels='RBG')
-#         label = np.argmax(model.predict(img),axis=1)
-#         st.write(classes[label[0]])
+    with st.spinner('Classifying...'):
+        image = Image.open(BytesIO(content))
+        img = decode_image(content)
+        st.image(img, channels='RBG')
+        label = np.argmax(model.predict(img),axis=1)
+        st.write(classes[label[0]])
 
 elif choice=='About Me':
     st.success('Super cute geek as you might wonder')
