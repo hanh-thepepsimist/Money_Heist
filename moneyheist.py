@@ -53,8 +53,8 @@ elif choice=='Image from Internet':
         image = Image.open(BytesIO(content))
         img = tf.image.decode_image(content,expand_animations=False,channels=3)
         st.image(image, channels='RBG')
-        label = np.argmax(model.predict(img),axis=1)
-        st.write(classes[label[0]])
+        #label = np.argmax(model.predict(img),axis=1)
+        #st.write(classes[label[0]])
 
 elif choice=='About Me':
     st.success('Super cute geek as you might wonder')
