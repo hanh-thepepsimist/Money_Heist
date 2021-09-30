@@ -9,9 +9,7 @@ These are the notes that are currently printed and they exist in denominations o
 This is a home-made database contributed by CoderSchoool students with images of different qualities and quantities.
 ### B. Methods
 This project includes two main sessions: 
-(1)Build predictor: Used transfer learning to build a model based on MobileNetV2. The model has not working well with 20000 and 50000 yet.
-![image](https://user-images.githubusercontent.com/81749639/135402957-48f6098b-ddd4-434b-abff-b20d6c65b8a2.png)
-(2)Deploy web application: Used Streamlit 
+(1)Build predictor: Used transfer learning to build a model based on MobileNetV2. The model has not working well with 20000 and 50000 yet.  (2)Deploy web application: Used Streamlit 
 ## 3. Results
 ![image](https://user-images.githubusercontent.com/81749639/135402241-667c424d-de99-4e4d-a940-5db98b4cb07e.png)
 https://tinyurl.com/moneyclassifier
