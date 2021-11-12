@@ -6,4 +6,4 @@ pandas
 pillow
 requests
 streamlit==0.88.0
-tensorflow==2.6.0
+tensorflow==2.6.1
