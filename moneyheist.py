@@ -7,15 +7,11 @@ import streamlit as st
 
 @st.cache(allow_output_mutation=True)
 
-def load_model():
-    model = tf.keras.models.load_model('moneyheist_checkpoint.h5')
-    return model
-
 def decode_img(image):
     img = tf.image.decode_jpeg(image, channels=3)
     return np.expand_dims(img,axis=0)
 
-model = load_model()
+model = tf.keras.models.load_model('moneyheist_checkpoint.h5')
 
 classes = ['1000', '10000', '100000', '2000', '20000', '200000', '5000', '50000', '500000']
 
